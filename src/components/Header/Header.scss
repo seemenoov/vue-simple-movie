@@ -1,0 +1,40 @@
+.header {
+  padding-top: 24px;
+  min-height: 56px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 8px;
+    width: 26px;
+    height: 32px;
+  }
+
+  &__right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__search,
+  &__settings {
+    color: #f1f1f1;
+    svg {
+      fill: currentColor;
+    }
+
+    &:disabled {
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+  }
+}
