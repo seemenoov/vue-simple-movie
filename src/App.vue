@@ -1,32 +1,13 @@
 <script setup>
 import { useRoute } from "vue-router";
 import { ref, watch, markRaw } from "vue";
-
-const route = useRoute();
-const layout = ref();
-
-const getLayout = async (layout) => {
-  const component = await import(`@/layouts/${layout}.vue`);
-  return component.default;
-};
-
-watch(
-  () => route.meta,
-  async (meta) => {
-    try {
-      layout.value = markRaw(await getLayout(meta.layout));
-    } catch (e) {
-      layout.value = markRaw(await getLayout("Default"));
-    }
-  },
-  { immediate: true }
-);
+import DefaultLayout from "@/layouts/Default.vue";
 </script>
 
 <template>
   <div class="main-app">
-    <component :is="layout">
+    <DefaultLayout>
       <router-view />
-    </component>
+    </DefaultLayout>
   </div>
 </template>
