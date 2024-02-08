@@ -20,5 +20,6 @@ import Header from "@/components/Header/Header.vue";
 
 .main {
   flex: 1;
+  padding-top: 24px;
 }
 </style>

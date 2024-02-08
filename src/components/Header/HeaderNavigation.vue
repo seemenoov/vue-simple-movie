@@ -1,19 +1,19 @@
 <script setup>
 const nav = [
   {
-    label: "Фильмы",
+    label: "Movies",
     to: "/",
   },
   {
-    label: "Сериалы",
+    label: "Serials",
     to: "/",
   },
   {
-    label: "Мультфильмы",
+    label: "Cartoon",
     to: "/",
   },
   {
-    label: "Скоро",
+    label: "Soon",
     to: "/",
   },
 ];

@@ -1,6 +1,5 @@
 .header {
-  padding-top: 24px;
-  min-height: 56px;
+  padding-top: 18px;
 
   &__inner {
     display: flex;
@@ -13,7 +12,7 @@
   }
 
   &__logo {
-    margin-right: 8px;
+    margin-right: 24px;
     width: 26px;
     height: 32px;
   }

@@ -1,0 +1,14 @@
+.movies {
+  padding-bottom: 64px;
+  &__title {
+    margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 32px 20px;
+  }
+}
