@@ -5,9 +5,9 @@ class MoviesService {
     this.$http = httpService;
   }
 
-  async getMovies() {
+  async getMovies(type, films) {
     try {
-      const data = await this.$http.get("/movie/popular");
+      const data = await this.$http.get(`/${type}/${films}`);
       return data?.results;
     } catch (e) {
       console.log(e);

@@ -11,6 +11,8 @@ const props = defineProps({
   },
 });
 
+console.log(props.movies);
+
 const filteredArray = computed(() => {
   if (props.filter === props.movies.length) return props.movies;
 

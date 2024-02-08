@@ -6,9 +6,13 @@ const props = defineProps({
   vote_average: Number,
   release_date: String,
   poster_path: String,
+  first_air_date: String,
 });
 
 const ratings = computed(() => props.vote_average.toFixed(1));
+const release = computed(() => {
+  return new Date(props.release_date || props.first_air_date).getFullYear();
+});
 </script>
 
 <template>
@@ -29,7 +33,9 @@ const ratings = computed(() => props.vote_average.toFixed(1));
       <div class="movie-item__rating">
         {{ ratings }}
       </div>
-      <div class="movie-item__date"></div>
+      <div class="movie-item__date" v-if="release">
+        {{ release }}
+      </div>
     </div>
   </div>
 </template>

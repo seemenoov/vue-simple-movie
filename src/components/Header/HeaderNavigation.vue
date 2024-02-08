@@ -9,12 +9,8 @@ const nav = [
     to: "/",
   },
   {
-    label: "Cartoon",
-    to: "/",
-  },
-  {
     label: "Soon",
-    to: "/",
+    to: "/soon",
   },
 ];
 </script>
