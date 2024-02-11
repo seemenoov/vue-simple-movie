@@ -11,8 +11,6 @@ const props = defineProps({
   },
 });
 
-console.log(props.movies);
-
 const filteredArray = computed(() => {
   if (props.filter === props.movies.length) return props.movies;
 
@@ -20,6 +18,8 @@ const filteredArray = computed(() => {
 
   return props.movies.slice(0, -slices);
 });
+
+console.log(filteredArray.value);
 </script>
 
 <template>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/pages/Home.vue";
 import Soon from "@/pages/Soon.vue";
+import Details from "@/pages/Details.vue";
 import Error from "@/pages/Error.vue";
 
 const routes = [
@@ -13,6 +14,12 @@ const routes = [
     path: "/soon",
     name: "Soon",
     component: Soon,
+  },
+
+  {
+    path: "/details/:id",
+    name: "Movie",
+    component: Details,
   },
 
   {
