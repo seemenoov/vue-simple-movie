@@ -1,31 +1,46 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/pages/Home.vue";
-import Soon from "@/pages/Soon.vue";
-import Details from "@/pages/Details.vue";
-import Error from "@/pages/Error.vue";
-
 const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
+    component: () => import("@/pages/Home.vue"),
   },
   {
     path: "/soon",
     name: "Soon",
-    component: Soon,
+    component: () => import("@/pages/Soon.vue"),
   },
 
   {
-    path: "/details/:id",
-    name: "Movie",
-    component: Details,
+    path: `/films`,
+    name: "Films",
+    component: () => import("@/pages/Films.vue"),
+  },
+
+  {
+    path: `/films/:id`,
+    name: "Film",
+    component: () => import("@/pages/Details.vue"),
+    props: { type: "movie" },
+  },
+
+  {
+    path: `/tv`,
+    name: "Serials",
+    component: () => import("@/pages/Serials.vue"),
+  },
+
+  {
+    path: `/tv/:id`,
+    name: "Serial",
+    component: () => import("@/pages/Details.vue"),
+    props: { type: "tv" },
   },
 
   {
     path: "/:pathMatch(.*)*",
     name: "Error",
-    component: Error,
+    component: () => import("@/pages/Error.vue"),
   },
 ];
 

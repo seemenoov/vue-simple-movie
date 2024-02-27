@@ -18,8 +18,6 @@ const filteredArray = computed(() => {
 
   return props.movies.slice(0, -slices);
 });
-
-console.log(filteredArray.value);
 </script>
 
 <template>

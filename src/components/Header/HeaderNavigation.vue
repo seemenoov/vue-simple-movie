@@ -2,11 +2,11 @@
 const nav = [
   {
     label: "Movies",
-    to: "/",
+    to: "/films",
   },
   {
     label: "Serials",
-    to: "/",
+    to: "/tv",
   },
   {
     label: "Soon",

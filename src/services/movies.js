@@ -14,11 +14,12 @@ class MoviesService {
     }
   }
 
-  async getDetails(id) {
+  async getDetails(id, type = "movie") {
     try {
-      const data = await this.$http.get(`/movie/${id}`);
-      const credits = await this.$http.get(`/movie/${id}/credits`);
-      return { ...data, ...credits };
+      const data = await this.$http.get(`/${type}/${id}`);
+      const credits = await this.$http.get(`/${type}/${id}/credits`);
+      const videos = await this.$http.get(`/${type}/${id}/videos`);
+      return { ...data, ...credits, videos };
     } catch (e) {
       console.log(e);
     }

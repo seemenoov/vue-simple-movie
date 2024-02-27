@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from "@vue/runtime-core";
+import { computed, watch } from "@vue/runtime-core";
 const props = defineProps({
   id: Number,
   original_title: String,
@@ -11,17 +11,23 @@ const props = defineProps({
 });
 
 const ratings = computed(() => props.vote_average.toFixed(1));
+
 const release = computed(() => {
   return new Date(props.release_date || props.first_air_date).getFullYear();
 });
+
 const isMovie = computed(() => {
-  return props.first_air_date ? "tv" : "movie";
+  return props.first_air_date ? "tv" : "films";
+});
+
+const link = computed(() => {
+  return isMovie.value === "tv" ? `/tv/${props.id}` : `/films/${props.id}`;
 });
 </script>
 
 <template>
   <div class="movie-item">
-    <router-link class="movie-item__link" :to="`/details/${id}`">
+    <router-link class="movie-item__link" :to="link">
       <div class="movie-item__poster">
         <img
           v-if="poster_path"
